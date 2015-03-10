@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Compatibility-GLFW2</Configuration>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
@@ -12,81 +12,19 @@
     </ReleaseVersion>
     <SynchReleaseVersion>False</SynchReleaseVersion>
     <Description>A minimalistic gaming library for C# based on OpenTK.</Description>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <AssemblyName>Pencil.Gaming</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Compatibility-GLFW2|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Compatibility-GLFW2\lib</OutputPath>
-    <DefineConstants>USE_GL_COMPAT; USE_GLFW2;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <CustomCommands>
-      <CustomCommands>
-        <Command type="AfterBuild" command="rm -rf &quot;${TargetDir}/natives32-glfw3&quot;" />
-        <Command type="AfterBuild" command="rm -rf &quot;${TargetDir}/natives64-glfw3&quot;" />
-        <Command type="AfterBuild" command="mv &quot;${TargetDir}/natives32-glfw2/&quot; &quot;${TargetDir}/../lib32&quot;" />
-        <Command type="AfterBuild" command="mv &quot;${TargetDir}/natives64-glfw2/&quot; &quot;${TargetDir}/../lib64&quot;" />
-        <Command type="Clean" command="rm -rf &quot;${TargetDir}/../lib64&quot; &quot;${TargetDir}/../lib32&quot; &quot;${TargetDir}/../lib&quot;" />
-        <Command type="AfterBuild" command="mv &quot;${TargetDir}/lib/Pencil.Gaming.dll.config&quot; &quot;${TargetDir}&quot;" />
-        <Command type="AfterBuild" command="rm -rf &quot;${TargetDir}/lib&quot;" />
-      </CustomCommands>
-    </CustomCommands>
-    <ConsolePause>false</ConsolePause>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Core-GLFW2|AnyCPU' ">
-    <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Core-GLFW2\lib</OutputPath>
-    <DefineConstants>USE_GL_CORE; USE_GLFW2;</DefineConstants>
-    <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <CustomCommands>
-      <CustomCommands>
-        <Command type="AfterBuild" command="rm -rf &quot;${TargetDir}/natives32-glfw3&quot;" />
-        <Command type="AfterBuild" command="rm -rf &quot;${TargetDir}/natives64-glfw3&quot;" />
-        <Command type="AfterBuild" command="mv &quot;${TargetDir}/natives32-glfw2/&quot; &quot;${TargetDir}/../lib32&quot;" />
-        <Command type="AfterBuild" command="mv &quot;${TargetDir}/natives64-glfw2/&quot; &quot;${TargetDir}/../lib64&quot;" />
-        <Command type="Clean" command="rm -rf &quot;${TargetDir}/../lib64&quot; &quot;${TargetDir}/../lib32&quot; &quot;${TargetDir}/../lib&quot;" />
-        <Command type="AfterBuild" command="mv &quot;${TargetDir}/lib/Pencil.Gaming.dll.config&quot; &quot;${TargetDir}&quot;" />
-        <Command type="AfterBuild" command="rm -rf &quot;${TargetDir}/lib&quot;" />
-      </CustomCommands>
-    </CustomCommands>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Compatibility-GLFW3|AnyCPU' ">
-    <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Compatibility-GLFW3\lib</OutputPath>
-    <DefineConstants>USE_GL_COMPAT; USE_GLFW3;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <CustomCommands>
-      <CustomCommands>
-        <Command type="AfterBuild" command="rm -rf &quot;${TargetDir}/natives32-glfw2&quot;" />
-        <Command type="AfterBuild" command="rm -rf &quot;${TargetDir}/natives64-glfw2&quot;" />
-        <Command type="AfterBuild" command="mv &quot;${TargetDir}/natives32-glfw3/&quot; &quot;${TargetDir}/../lib32&quot;" />
-        <Command type="AfterBuild" command="mv &quot;${TargetDir}/natives64-glfw3/&quot; &quot;${TargetDir}/../lib64&quot;" />
-        <Command type="Clean" command="rm -rf &quot;${TargetDir}/../lib64&quot; &quot;${TargetDir}/../lib32&quot; &quot;${TargetDir}/../lib&quot;" />
-        <Command type="AfterBuild" command="mv &quot;${TargetDir}/lib/Pencil.Gaming.dll.config&quot; &quot;${TargetDir}&quot;" />
-        <Command type="AfterBuild" command="rm -rf &quot;${TargetDir}/lib&quot;" />
-      </CustomCommands>
-    </CustomCommands>
-    <ConsolePause>false</ConsolePause>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Core-GLFW3|AnyCPU' ">
-    <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Core-GLFW3\lib</OutputPath>
+    <OutputPath>bin\Release\lib</OutputPath>
     <DefineConstants>USE_GL_CORE; USE_GLFW3;</DefineConstants>
     <WarningLevel>4</WarningLevel>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <CustomCommands>
       <CustomCommands>
-        <Command type="AfterBuild" command="rm -rf &quot;${TargetDir}/natives32-glfw2&quot;" />
-        <Command type="AfterBuild" command="rm -rf &quot;${TargetDir}/natives64-glfw2&quot;" />
         <Command type="AfterBuild" command="mv &quot;${TargetDir}/natives32-glfw3/&quot; &quot;${TargetDir}/../lib32&quot;" />
         <Command type="AfterBuild" command="mv &quot;${TargetDir}/natives64-glfw3/&quot; &quot;${TargetDir}/../lib64&quot;" />
         <Command type="Clean" command="rm -rf &quot;${TargetDir}/../lib32&quot; &quot;${TargetDir}/../lib64&quot; &quot;${TargetDir}/../lib&quot;" />
@@ -94,6 +32,40 @@
         <Command type="AfterBuild" command="rm -rf &quot;${TargetDir}/lib&quot;" />
       </CustomCommands>
     </CustomCommands>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseWindows|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\lib</OutputPath>
+    <DefineConstants>USE_GL_CORE; USE_GLFW3;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\lib</OutputPath>
+    <DefineConstants>USE_GL_CORE; USE_GLFW3;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="mv &quot;${TargetDir}/natives32-glfw3/&quot; &quot;${TargetDir}/../lib32&quot;" />
+        <Command type="AfterBuild" command="mv &quot;${TargetDir}/natives64-glfw3/&quot; &quot;${TargetDir}/../lib64&quot;" />
+        <Command type="Clean" command="rm -rf &quot;${TargetDir}/../lib32&quot; &quot;${TargetDir}/../lib64&quot; &quot;${TargetDir}/../lib&quot;" />
+        <Command type="AfterBuild" command="mv &quot;${TargetDir}/lib/Pencil.Gaming.dll.config&quot; &quot;${TargetDir}&quot;" />
+        <Command type="AfterBuild" command="rm -rf &quot;${TargetDir}/lib&quot;" />
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugWindows|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\lib</OutputPath>
+    <DefineConstants>USE_GL_CORE; USE_GLFW3;</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -178,8 +150,6 @@
     <Folder Include="Glfw\" />
     <Folder Include="lib\" />
     <Folder Include="Audio\" />
-    <Folder Include="natives32-glfw2\" />
-    <Folder Include="natives64-glfw2\" />
     <Folder Include="natives32-glfw3\" />
     <Folder Include="natives64-glfw3\" />
     <Folder Include="Scripting\" />
@@ -189,36 +159,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="LICENSE.TXT" />
-    <None Include="natives32-glfw2\openal32.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="natives32-glfw2\wrap_oal.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="natives32-glfw2\libopenal.so">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="natives32-glfw2\glfw.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="natives32-glfw2\libglfw.dylib">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="natives32-glfw2\libglfw.so">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="natives64-glfw2\libopenal.so">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="natives64-glfw2\wrap_oal.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="natives64-glfw2\openal32.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="natives64-glfw2\libglfw.so">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="natives32-glfw3\glfw.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -249,22 +189,7 @@
     <None Include="natives64-glfw3\wrap_oal.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="natives64-glfw2\glfw.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="natives64-glfw2\liblua.so">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="natives64-glfw3\liblua.so">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="natives32-glfw2\lua.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="natives32-glfw2\liblua.dylib">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="natives32-glfw2\liblua.so">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="natives32-glfw3\liblua.dylib">
@@ -276,9 +201,6 @@
     <None Include="natives32-glfw3\lua.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="natives64-glfw2\lua.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="natives64-glfw3\lua.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -286,9 +208,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="natives32-glfw3\libglfw.dylib">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="natives64-glfw2\liblua.dylib">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="natives64-glfw3\liblua.dylib">
