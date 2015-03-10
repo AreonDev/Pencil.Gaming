@@ -161,7 +161,7 @@ namespace Pencil.Gaming.Audio {
 //		public static void GetSource(uint sid, int param, float[] values) {
 //			ALDelegates.alGetSourcefv(sid, param, values);
 //		}
-		public static void GetSource(uint sid, ALSourcei param, out int value) {
+		public static void GetSource(uint sid, ALGetSourcei param, out int value) {
 			ALDelegates.alGetSourcei(sid, (int)param, out value);
 		}
 		public static void GetSource(uint sid, ALSource3i param, out int value1, out int value2, out int value3) {
