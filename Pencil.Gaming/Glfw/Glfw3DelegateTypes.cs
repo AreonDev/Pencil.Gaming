@@ -28,7 +28,8 @@ using System.Security;
 using System;
 using System.Runtime.InteropServices;
 
-namespace Pencil.Gaming {
+namespace Pencil.Gaming 
+{
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwErrorFun(GlfwError code,[MarshalAs(UnmanagedType.LPStr)] string desc);
 	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]

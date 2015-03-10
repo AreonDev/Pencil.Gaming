@@ -24,7 +24,9 @@ GLFW3
 | Linux 32-bit   | Stable          | Stable            | **Broken**      | Stable    |
 | Windows 64-bit | Stable          | Stable            | Stable          | Stable    |
 | Windows 32-bit | Stable          | Stable            | Presumed Stable | Stable    |
-| Mac OS X       | Stable          | Stable            | Not Implemented | Stable    |
+| Mac OS X       | Stable          | Stable            | Stable*          | Stable    |
+
+*Both 32 and 64-bit versions provided for Mac OS X, but mono is realistically only available for 32-bit, so those are recommended.
 
 Building using Makefile
 =======================
@@ -138,6 +140,8 @@ Pencil.Gaming provides support for Lua, using the default C# `PascalCased` ident
 
 Whereas a C-api function call might be `lua_pcall(L, 0, LUA_MULTRET, 0)`, the Pencil.Gaming C# API call would be `Lua.PCall(L, 0, Lua.MultRet, 0)`.
 
+For more information on using these lua bindings, see the [Lua C api docs](http://www.lua.org/pil/contents.html#24).
+
 Sample usage (OpenAL)
 =====================
 Another utility is the `AL.Utils.BufferFromWav` utility, which is able to load wave files into an OpenAL buffer. Similarly, there's the `AL.Utils.BufferFromOgg` utility, allowing Ogg/Vorbis file loading.
@@ -159,3 +163,8 @@ AL.SourcePlay(source);
 AL.DeleteSources(1, ref source);
 AL.DeleteBuffers(1, ref buffer);
 ```
+
+Other Resources
+===============
+
+* [Collada Importer](http://sourceforge.net/projects/csharpcollada/)
