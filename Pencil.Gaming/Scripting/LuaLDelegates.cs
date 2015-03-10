@@ -27,95 +27,95 @@ namespace Pencil.Gaming.Scripting {
 #endif
 		}
 
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate void checkversion_(LuaStatePtr l,double ver);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate int getmetafield(LuaStatePtr l,int obj,[MarshalAs(UnmanagedType.LPStr)] string e);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate int callmeta(LuaStatePtr l,int obj,[MarshalAs(UnmanagedType.LPStr)] string e);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate sbyte * tolstring(LuaStatePtr l,int idx,int *len);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate int argerror(LuaStatePtr l,int numarg,[MarshalAs(UnmanagedType.LPStr)] string extramsg);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate sbyte * checklstring(LuaStatePtr l,int numArg,int * l_);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate sbyte * optlstring(LuaStatePtr l,int numArg,[MarshalAs(UnmanagedType.LPStr)] string def,int * l_);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate double checknumber(LuaStatePtr l,int numArg);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate double optnumber(LuaStatePtr l,int nArg,double def);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate int checkinteger(LuaStatePtr l,int numArg);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate int optinteger(LuaStatePtr l,int nArg,int def);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate uint checkunsigned(LuaStatePtr l,int numArg);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate uint optunsigned(LuaStatePtr l,int numArg,uint def);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate void checkstack(LuaStatePtr l,int sz,[MarshalAs(UnmanagedType.LPStr)] string msg);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate void checktype(LuaStatePtr l,int narg,int t);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate void checkany(LuaStatePtr l,int narg);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate int newmetatable(LuaStatePtr l,[MarshalAs(UnmanagedType.LPStr)] string tname);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate void setmetatable(LuaStatePtr l,[MarshalAs(UnmanagedType.LPStr)] string tname);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate IntPtr testudata(LuaStatePtr l,int ud,[MarshalAs(UnmanagedType.LPStr)] string tname);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate IntPtr checkudata(LuaStatePtr l,int ud,[MarshalAs(UnmanagedType.LPStr)] string tname);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate void @where(LuaStatePtr l,int lvl);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate int checkoption(LuaStatePtr l,int narg,[MarshalAs(UnmanagedType.LPStr)] string def,[MarshalAs(UnmanagedType.LPArray)] sbyte *[] lst);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate int fileresult(LuaStatePtr l,int stat,[MarshalAs(UnmanagedType.LPStr)] string fname);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate int execresult(LuaStatePtr l,int stat);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate int @ref(LuaStatePtr l,int t);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate void unref(LuaStatePtr l,int t,int @ref);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate int loadfilex(LuaStatePtr l,[MarshalAs(UnmanagedType.LPStr)] string filename,[MarshalAs(UnmanagedType.LPStr)] string mode);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate int loadbufferx(LuaStatePtr l,[MarshalAs(UnmanagedType.LPStr)] string buff,int sz,[MarshalAs(UnmanagedType.LPStr)] string name,[MarshalAs(UnmanagedType.LPStr)] string mode);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate int loadstring(LuaStatePtr l,[MarshalAs(UnmanagedType.LPStr)] string s);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate LuaStatePtr newstate();
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate int len(LuaStatePtr l,int idx);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate sbyte * gsub(LuaStatePtr l,[MarshalAs(UnmanagedType.LPStr)] string s,[MarshalAs(UnmanagedType.LPStr)] string p,[MarshalAs(UnmanagedType.LPStr)] string r);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate void setfuncs(LuaStatePtr l,IntPtr l_,int nup);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate int getsubtable(LuaStatePtr l,int idx,[MarshalAs(UnmanagedType.LPStr)] string fname);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate void traceback(LuaStatePtr l,LuaStatePtr l1,[MarshalAs(UnmanagedType.LPStr)] string msg,int level);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate void requiref(LuaStatePtr l,[MarshalAs(UnmanagedType.LPStr)] string modname,LuaCFunction openf,int glb);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate void buffinit(LuaStatePtr l,LuaBufferPtr B);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate sbyte *prepbuffsize(LuaBufferPtr B,int sz);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate void addlstring(LuaBufferPtr B,[MarshalAs(UnmanagedType.LPStr)] string s,int l);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate void addstring(LuaBufferPtr B,[MarshalAs(UnmanagedType.LPStr)] string s);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate void addvalue(LuaBufferPtr B);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate void pushresult(LuaBufferPtr B);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate void pushresultsize(LuaBufferPtr B,int sz);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate sbyte *buffinitsize(LuaStatePtr l,LuaBufferPtr B,int sz);
-		[SuppressUnmanagedCodeSecurity]
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 		internal delegate void openlibs(LuaStatePtr l);
 
 		#pragma warning disable 0649

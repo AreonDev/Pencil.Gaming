@@ -86,7 +86,7 @@
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="NVorbis">
-      <HintPath>NVorbis.dll</HintPath>
+      <HintPath>lib\NVorbis.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -163,6 +163,7 @@
     <Folder Include="Math\" />
     <Folder Include="Graphics\" />
     <Folder Include="Glfw\" />
+    <Folder Include="lib\" />
     <Folder Include="Audio\" />
     <Folder Include="natives32-glfw2\" />
     <Folder Include="natives64-glfw2\" />
@@ -171,7 +172,7 @@
     <Folder Include="Scripting\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Pencil.Gaming.dll.config">
+    <None Include="lib\Pencil.Gaming.dll.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="LICENSE.TXT" />
@@ -268,7 +269,7 @@
     <None Include="natives64-glfw3\lua.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="NVorbis.dll">
+    <None Include="lib\NVorbis.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

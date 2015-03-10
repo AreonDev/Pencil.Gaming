@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 
 namespace Pencil.Gaming {
 	internal static class Glfw32 {
-		private const string lib = "natives32/glfw.dll";
+		private const string lib = "lib32/glfw.dll";
 
 		[DllImport(Glfw32.lib), SuppressUnmanagedCodeSecurity]
 		internal static extern int glfwInit();

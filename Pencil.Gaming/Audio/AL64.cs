@@ -27,7 +27,7 @@ using System.Security;
 
 namespace Pencil.Gaming.Audio {
 	internal static class AL64 {
-		private const string lib = "natives64/openal32.dll";
+		private const string lib = "lib64/openal32.dll";
 
 		[DllImport(AL64.lib), SuppressUnmanagedCodeSecurity]
 		internal static extern void alEnable(int capability);

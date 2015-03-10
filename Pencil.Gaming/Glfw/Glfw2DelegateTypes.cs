@@ -19,19 +19,30 @@
 // WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 // OTHER DEALINGS IN THE SOFTWARE.
+using System.Runtime.InteropServices;
+using System.Security;
+
 #endregion
 
 #if USE_GLFW2
 using System;
 
 namespace Pencil.Gaming {
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwWindowSizeFun(int width,int height);
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate int  GlfwWindowCloseFun();
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwWindowRefreshFun();
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwMouseButtonFun(MouseButton btn,Keystate state);
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwMousePosFun(int x,int y);
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwMouseWheelFun(int state);
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwKeyFun(Key key,Keystate state);
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwCharFun(char ch,Keystate state);
 }
 

@@ -19,6 +19,9 @@
 // WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 // OTHER DEALINGS IN THE SOFTWARE.
+using System.Security;
+
+
 #endregion
 
 #if USE_GLFW3
@@ -26,20 +29,35 @@ using System;
 using System.Runtime.InteropServices;
 
 namespace Pencil.Gaming {
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwErrorFun(GlfwError code,[MarshalAs(UnmanagedType.LPStr)] string desc);
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwMonitorFun(GlfwMonitorPtr mtor,ConnectionState @enum);
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwWindowCloseFun(GlfwWindowPtr wnd);
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwWindowPosFun(GlfwWindowPtr wnd,int x,int y);
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwWindowRefreshFun(GlfwWindowPtr wnd);
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwWindowSizeFun(GlfwWindowPtr wnd,int width,int height);
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwWindowFocusFun(GlfwWindowPtr wnd,bool focus);
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwKeyFun(GlfwWindowPtr wnd,Key key,int scanCode,KeyAction action,KeyModifiers mods);
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwCharFun(GlfwWindowPtr wnd,char ch);
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwMouseButtonFun(GlfwWindowPtr wnd,MouseButton btn,KeyAction action);
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwWindowIconifyFun(GlfwWindowPtr wnd,bool iconify);
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwCursorPosFun(GlfwWindowPtr wnd,double x,double y);
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwCursorEnterFun(GlfwWindowPtr wnd,bool enter);
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwScrollFun(GlfwWindowPtr wnd,double xoffset,double yoffset);
+	[UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	public delegate void GlfwFramebufferSizeFun(GlfwWindowPtr wnd,int width,int height);
 }
 
