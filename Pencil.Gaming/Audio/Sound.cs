@@ -366,7 +366,7 @@ namespace Pencil.Gaming.Audio {
 		public int Buffer {
 			get {
 				int result;
-				AL.GetSource(SourceHandle, ALSourcei.Buffer, out result);
+				AL.GetSource(SourceHandle, ALGetSourcei.Buffer, out result);
 				return result;
 			}
 			set {
@@ -376,7 +376,7 @@ namespace Pencil.Gaming.Audio {
 		public int ByteOffset {
 			get {
 				int result;
-				AL.GetSource(SourceHandle, ALSourcei.ByteOffset, out result);
+				AL.GetSource(SourceHandle, ALGetSourcei.ByteOffset, out result);
 				return result;
 			}
 			set {
@@ -386,7 +386,7 @@ namespace Pencil.Gaming.Audio {
 		public int EfxDirectFilter {
 			get {
 				int result;
-				AL.GetSource(SourceHandle, ALSourcei.EfxDirectFilter, out result);
+                                AL.GetSource(SourceHandle, (ALGetSourcei) ALSourcei.EfxDirectFilter, out result);
 				return result;
 			}
 			set {
@@ -396,7 +396,7 @@ namespace Pencil.Gaming.Audio {
 		public int SampleOffset {
 			get {
 				int result;
-				AL.GetSource(SourceHandle, ALSourcei.SampleOffset, out result);
+				AL.GetSource(SourceHandle, ALGetSourcei.SampleOffset, out result);
 				return result;
 			}
 			set {
@@ -406,7 +406,7 @@ namespace Pencil.Gaming.Audio {
 		public ALSourceType SourceType {
 			get {
 				int result;
-				AL.GetSource(SourceHandle, ALSourcei.SourceType, out result);
+				AL.GetSource(SourceHandle, ALGetSourcei.SourceType, out result);
 				return (ALSourceType)result;
 			}
 			set {
