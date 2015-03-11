@@ -516,5 +516,10 @@ namespace Pencil.Gaming.Audio
         {
             ALDelegates.alGetFilterf(filter, (int)param, out value);
         }
+
+        public static int MaxALCAuxiliarySends()
+        {
+            return manager.MaxAuxiliarySends;
+        }
     }
 }

@@ -87,9 +87,10 @@ namespace Pencil.Gaming.Audio
             if (alcIsExtensionPresent (alcDeviceHandle, "ALC_EXT_EFX"))
             {
                 int[] alcInteger = new int[1];
-                alcGetIntegerv (alcDeviceHandle, 131065, 1, alcInteger);
-                attributes.Add (131065);
-                attributes.Add (alcInteger [0]);
+                alcGetIntegerv (alcDeviceHandle, 0x20003, 1, alcInteger);
+                attributes.Add(0x20003);
+                attributes.Add (alcInteger[0]);
+                MaxAuxiliarySends = alcInteger[0];
             }
             attributes.Add (0);
 
@@ -109,6 +110,7 @@ namespace Pencil.Gaming.Audio
 #endif
         }
 
+        public int MaxAuxiliarySends{ get; private set;}
         ~AlcManager ()
         {
             if (IntPtr.Size == 8)
