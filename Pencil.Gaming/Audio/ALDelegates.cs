@@ -51,6 +51,8 @@ namespace Pencil.Gaming.Audio
 #endif
         }
 
+        #region Plain AL
+
         [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
 	    internal delegate void Enable(int capability);
 
@@ -282,11 +284,108 @@ namespace Pencil.Gaming.Audio
         [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
         internal delegate void DistanceModel(int distanceModel);
 
+        #endregion
+
         [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
         internal delegate void GenAuxiliaryEffectSlots(int num,[MarshalAs(UnmanagedType.LPArray)] uint[] values);
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
         internal delegate void DeleteAuxiliaryEffectSlots(int num,[MarshalAs(UnmanagedType.LPArray)] uint[] values);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate bool IsAuxiliaryEffectSlot(uint identifier);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void AuxiliaryEffectSloti(uint slot,int param,int value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void AuxiliaryEffectSlotiv(uint slot,int param,[MarshalAs(UnmanagedType.LPArray)] int[] value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void AuxiliaryEffectSlotf(uint slot,int param,float value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void AuxiliaryEffectSlotfv(uint slot,int param,[MarshalAs(UnmanagedType.LPArray)] float[] value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void GetAuxiliaryEffectSloti(uint slot,int param,out int value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void GetAuxiliaryEffectSlotiv(uint slot,int param,[MarshalAs(UnmanagedType.LPArray)] int[] value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void GetAuxiliaryEffectSlotf(uint slot,int param,out float value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void GetAuxiliaryEffectSlotfv(uint slot,int param,[MarshalAs(UnmanagedType.LPArray)] float[] value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void GenEffects(int num,[MarshalAs(UnmanagedType.LPArray)] uint[] values);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void DeleteEffects(int num,[MarshalAs(UnmanagedType.LPArray)] uint[] values);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate bool IsEffect(uint identifier);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void Effecti(uint slot,int param,int value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void Effectiv(uint slot,int param,[MarshalAs(UnmanagedType.LPArray)] int[] value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void Effectf(uint slot,int param,float value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void Effectfv(uint slot,int param,[MarshalAs(UnmanagedType.LPArray)] float[] value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void GetEffecti(uint slot,int param,out int value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void GetEffectiv(uint slot,int param,[MarshalAs(UnmanagedType.LPArray)] int[] value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void GetEffectf(uint slot,int param,out float value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void GetEffectfv(uint slot,int param,[MarshalAs(UnmanagedType.LPArray)] float[] value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void GenFilters(int num,[MarshalAs(UnmanagedType.LPArray)] uint[] values);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void DeleteFilters(int num,[MarshalAs(UnmanagedType.LPArray)] uint[] values);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate bool IsFilter(uint identifier);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void Filteri(uint slot,int param,int value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void Filteriv(uint slot,int param,[MarshalAs(UnmanagedType.LPArray)] int[] value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void Filterf(uint slot,int param,float value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void Filterfv(uint slot,int param,[MarshalAs(UnmanagedType.LPArray)] float[] value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void GetFilteri(uint slot,int param,out int value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void GetFilteriv(uint slot,int param,[MarshalAs(UnmanagedType.LPArray)] int[] value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void GetFilterf(uint slot,int param,out float value);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
+        internal delegate void GetFilterfv(uint slot,int param,[MarshalAs(UnmanagedType.LPArray)] float[] value);
+
+        #region Plain AL
 
         internal static Enable alEnable;
         internal static Disable alDisable;
@@ -365,8 +464,45 @@ namespace Pencil.Gaming.Audio
         internal static DopplerVelocity alDopplerVelocity;
         internal static SpeedOfSound alSpeedOfSound;
         internal static DistanceModel alDistanceModel;
+
+        #endregion
+
+        // AL Effects extension
         internal static GenAuxiliaryEffectSlots alGenAuxiliaryEffectSlots;
         internal static DeleteAuxiliaryEffectSlots alDeleteAuxiliaryEffectSlots;
+        internal static IsAuxiliaryEffectSlot alIsAuxiliaryEffectSlot;
+        internal static AuxiliaryEffectSloti alAuxiliaryEffectSloti;
+        internal static AuxiliaryEffectSlotiv alAuxiliaryEffectSlotiv;
+        internal static AuxiliaryEffectSlotf alAuxiliaryEffectSlotf;
+        internal static AuxiliaryEffectSlotfv alAuxiliaryEffectSlotfv;
+        internal static GetAuxiliaryEffectSloti alGetAuxiliaryEffectSloti;
+        internal static GetAuxiliaryEffectSlotiv alGetAuxiliaryEffectSlotiv;
+        internal static GetAuxiliaryEffectSlotf alGetAuxiliaryEffectSlotf;
+        internal static GetAuxiliaryEffectSlotfv alGetAuxiliaryEffectSlotfv;
+
+        internal static GenEffects alGenEffects;
+        internal static DeleteEffects alDeleteEffects;
+        internal static IsEffect alIsEffect;
+        internal static Effecti alEffecti;
+        internal static Effectiv alEffectiv;
+        internal static Effectf alEffectf;
+        internal static Effectfv alEffectfv;
+        internal static GetEffecti alGetEffecti;
+        internal static GetEffectiv alGetEffectiv;
+        internal static GetEffectf alGetEffectf;
+        internal static GetEffectfv alGetEffectfv;
+
+        internal static GenFilters alGenFilters;
+        internal static DeleteFilters alDeleteFilters;
+        internal static IsFilter alIsFilter;
+        internal static Filteri alFilteri;
+        internal static Filteriv alFilteriv;
+        internal static Filterf alFilterf;
+        internal static Filterfv alFilterfv;
+        internal static GetFilteri alGetFilteri;
+        internal static GetFilteriv alGetFilteriv;
+        internal static GetFilterf alGetFilterf;
+        internal static GetFilterfv alGetFilterfv;
     }
 }
 
