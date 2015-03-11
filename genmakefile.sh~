@@ -27,7 +27,7 @@ core_glfw3:
 \tcp -r "Pencil.Gaming/lib64" "Pencil.Gaming/bin/Release/lib64"
 \tcp "Pencil.Gaming/lib/Pencil.Gaming.dll.config" "Pencil.Gaming/bin/Release/lib/Pencil.Gaming.dll.config"
 \t$(CSC) $(FILES) -out:"Pencil.Gaming/bin/Release/lib/Pencil.Gaming.dll" -define:USE_GL_CORE\;USE_GLFW3 $(CFLAGS)'
-MAKEFILE=$MAKEFILE$CONFIGS1$CONFIGS2
+MAKEFILE=$MAKEFILE$CONFIGS1$CONFIGS2$CONFIGS3$CONFIGS4
 
 echo "$MAKEFILE" > Makefile
 echo "Makefile generated successfully."
