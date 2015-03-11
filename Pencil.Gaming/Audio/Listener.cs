@@ -25,34 +25,39 @@ using System;
 using Pencil.Gaming.Audio;
 using Pencil.Gaming.MathUtils;
 
-namespace Pencil.Gaming.Audio {
-	public class Listener {
-		private static Listener current = null;
+namespace Pencil.Gaming.Audio
+{
+    public class Listener
+    {
+        private static Listener current = null;
 
-		public Listener(Vector3 orientation, Vector3 position, Vector3 velocity, float efxMetersPerUnit, float gain) {
-			Orientation = orientation;
-			Position = position;
-			Velocity = velocity;
-			EfxMetersPerUnit = efxMetersPerUnit;
-			Gain = gain;
-		}
+        public Listener(Vector3 orientation, Vector3 position, Vector3 velocity, float efxMetersPerUnit, float gain)
+        {
+            Orientation = orientation;
+            Position = position;
+            Velocity = velocity;
+            EfxMetersPerUnit = efxMetersPerUnit;
+            Gain = gain;
+        }
 
-		public Vector3 Orientation;
-		public Vector3 Position;
-		public Vector3 Velocity;
-		public float EfxMetersPerUnit;
-		public float Gain;
+        public Vector3 Orientation;
+        public Vector3 Position;
+        public Vector3 Velocity;
+        public float EfxMetersPerUnit;
+        public float Gain;
 
-		public virtual void MakeCurrent() {
-			if (current != this) {
-				AL.Listener(ALListener3f.Position, Position.X, Position.Y, Position.Z);
-				AL.Listener(ALListener3f.Velocity, Velocity.X, Velocity.Y, Velocity.Z);
-				AL.Listener(ALListenerf.EfxMetersPerUnit, EfxMetersPerUnit);
-				AL.Listener(ALListenerf.Gain, Gain);
-				AL.Listener(ALListenerfv.Orientation, new float[] { Orientation.X, Orientation.Y, Orientation.Z });
-				current = this;
-			}
-		}
-	}
+        public virtual void MakeCurrent()
+        {
+            if (current != this)
+            {
+                AL.Listener(ALListener3f.Position, Position.X, Position.Y, Position.Z);
+                AL.Listener(ALListener3f.Velocity, Velocity.X, Velocity.Y, Velocity.Z);
+                AL.Listener(ALListenerf.EfxMetersPerUnit, EfxMetersPerUnit);
+                AL.Listener(ALListenerf.Gain, Gain);
+                AL.Listener(ALListenerfv.Orientation, new float[] { Orientation.X, Orientation.Y, Orientation.Z });
+                current = this;
+            }
+        }
+    }
 }
 
