@@ -47,6 +47,14 @@ namespace Pencil.Gaming.Audio
 
         [DllImport (Alc64.lib)]
         internal static extern bool alcMakeContextCurrent (IntPtr context);
+
+#if DEBUG
+        [DllImport(Alc64.lib)]
+        internal static extern IntPtr alcGetString([In] IntPtr device, int param);
+
+        [DllImport(Alc64.lib)]
+        internal static extern int alcGetError();
+#endif
     }
 }
 

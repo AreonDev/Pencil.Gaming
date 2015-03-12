@@ -386,7 +386,8 @@ namespace Pencil.Gaming.Audio
         internal delegate void GetFilterfv(uint slot,int param,[MarshalAs(UnmanagedType.LPArray)] float[] value);
 
         #region Plain AL
-
+#pragma warning disable 0649
+        //we will assign values using reflection so it's fine to disable this warning
         internal static Enable alEnable;
         internal static Disable alDisable;
         internal static IsEnabled alIsEnabled;
@@ -503,6 +504,7 @@ namespace Pencil.Gaming.Audio
         internal static GetFilteriv alGetFilteriv;
         internal static GetFilterf alGetFilterf;
         internal static GetFilterfv alGetFilterfv;
+#pragma warning restore 0649
     }
 }
 

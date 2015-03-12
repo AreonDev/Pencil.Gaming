@@ -29,10 +29,12 @@ namespace Pencil.Gaming.Audio
 {
     public static partial class AL
     {
-        #pragma warning disable 0414
         private static AlcManager manager = new AlcManager();
-        #pragma warning restore 0414
 
+        public static void MakeCurrent()
+        {
+            manager.MakeCurrent();
+        }
         public static void Enable(ALCapability capability)
         {
             ALDelegates.alEnable((int)capability);
