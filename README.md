@@ -168,3 +168,5 @@ Other Resources
 ===============
 
 * [Collada Importer](http://sourceforge.net/projects/csharpcollada/)
+
+This fork is part of FreezingArcher 3D game framework.
