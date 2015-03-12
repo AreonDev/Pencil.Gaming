@@ -252,6 +252,8 @@ namespace Pencil.Gaming.Audio
                 //ptrOffset = 20;
                 //formatType = ((short)(((short)sound[1 + ptrOffset] << 8) | ((short)sound[0 + ptrOffset])));
                 ptrOffset = 22;
+#pragma warning disable 0675
+                //idk why this is needed, but it works, so I don't touch it
                 channels = (short)(((short)sound[1 + ptrOffset] << 8) | ((short)sound[0 + ptrOffset]));
                 ptrOffset = 24;
                 sampleRate = ((uint)sound[3 + ptrOffset] << 24) | ((uint)sound[2 + ptrOffset] << 16) | ((uint)sound[1 + ptrOffset] << 8) | ((uint)sound[ptrOffset]);
@@ -261,6 +263,7 @@ namespace Pencil.Gaming.Audio
                 bytesPerSample = (short)(((short)sound[1 + ptrOffset] << 8) | ((short)sound[0 + ptrOffset]));
                 ptrOffset = 34;
                 bitsPerSample = (short)(((short)sound[1 + ptrOffset] << 8) | ((short)sound[0 + ptrOffset]));
+#pragma warning restore 0675
                 if (sound[36] != 'd' || sound[37] != 'a' || sound[38] != 't' || sound[39] != 'a')
                 {
                     throw new Exception("Invalid file format.");

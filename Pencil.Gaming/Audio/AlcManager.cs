@@ -24,6 +24,7 @@
 using System;
 using System.Diagnostics;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 namespace Pencil.Gaming.Audio
 {
@@ -44,6 +45,42 @@ namespace Pencil.Gaming.Audio
 
         private delegate bool MakeContextCurrent (IntPtr hndl);
 
+#if DEBUG
+
+        private delegate IntPtr GetString(IntPtr dev, int getString);
+
+        private delegate int GetError();
+        private static string _GetString(GetString alcGetString, IntPtr device, int param)
+        {
+            return Marshal.PtrToStringAnsi(alcGetString(device, param));
+        }
+
+        private static IList<string> GetStringList(GetString alcGetString, IntPtr device, int param)
+        {
+            List<string> result = new List<string>();
+            IntPtr t = alcGetString(IntPtr.Zero, param);
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            byte b;
+            int offset = 0;
+            do
+            {
+                b = Marshal.ReadByte(t, offset++);
+                if (b != 0)
+                    sb.Append((char)b);
+                if (b == 0)
+                {
+                    result.Add(sb.ToString());
+                    if (Marshal.ReadByte(t, offset) == 0) // offset already properly increased through ++
+                        break; // 2x null
+                    else
+                        sb.Remove(0, sb.Length); // 1x null
+                }
+            } while (true);
+
+            return (IList<string>)result;
+        }
+
+#endif
         public AlcManager ()
         {
 #if DEBUG
@@ -56,7 +93,10 @@ namespace Pencil.Gaming.Audio
             GetIntegerv alcGetIntegerv = null;
             CreateContext alcCreateContext = null;
             MakeContextCurrent alcMakeContextCurrent = null;
-
+#if DEBUG
+            GetString alcGetString = null;
+            GetError alcGetError = null;
+#endif
             if (IntPtr.Size == 8)
             {
                 alcCloseDevice = Alc64.alcCloseDevice;
@@ -65,6 +105,11 @@ namespace Pencil.Gaming.Audio
                 alcGetIntegerv = Alc64.alcGetIntegerv;
                 alcCreateContext = Alc64.alcCreateContext;
                 alcMakeContextCurrent = Alc64.alcMakeContextCurrent;
+#if DEBURG
+                Console.WriteLine("Alc64");
+                alcGetString = Alc64.alcGetString;
+                alcGetError = Alc64.alcGetError;
+#endif
             }
             else
             {
@@ -74,15 +119,32 @@ namespace Pencil.Gaming.Audio
                 alcGetIntegerv = Alc32.alcGetIntegerv;
                 alcCreateContext = Alc32.alcCreateContext;
                 alcMakeContextCurrent = Alc32.alcMakeContextCurrent;
+#if DEBUG
+                Console.WriteLine("Alc32");
+                alcGetString = Alc32.alcGetString;
+                alcGetError = Alc32.alcGetError;
+#endif
             }
 
             alcDeviceHandle = alcOpenDevice (null);
+
+#if DEBUG
+            IList<string> list = GetStringList(alcGetString, IntPtr.Zero, 0x1005);
+            var error = alcGetError();
+            Console.WriteLine("error: {0}", error);
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
             if (alcDeviceHandle == IntPtr.Zero)
             {
                 // TODO: Named devices
                 throw new Exception ("Could not find audio device.");
             }
 
+            string str = _GetString(alcGetString, IntPtr.Zero, 0x1006);
+            Console.WriteLine(str);
+#endif
             List<int> attributes = new List<int> { 4105, 0, };
             if (alcIsExtensionPresent (alcDeviceHandle, "ALC_EXT_EFX"))
             {
@@ -121,6 +183,11 @@ namespace Pencil.Gaming.Audio
             {
                 Alc32.alcCloseDevice (alcDeviceHandle);
             }
+        }
+
+        public void MakeCurrent()
+        {
+            Alc64.alcMakeContextCurrent(alcContextHandle);
         }
     }
 }
