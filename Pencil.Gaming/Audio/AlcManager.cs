@@ -105,7 +105,7 @@ namespace Pencil.Gaming.Audio
                 alcGetIntegerv = Alc64.alcGetIntegerv;
                 alcCreateContext = Alc64.alcCreateContext;
                 alcMakeContextCurrent = Alc64.alcMakeContextCurrent;
-#if DEBURG
+#if DEBUG
                 Console.WriteLine("Alc64");
                 alcGetString = Alc64.alcGetString;
                 alcGetError = Alc64.alcGetError;
