@@ -43,7 +43,7 @@
     <DebugSymbols>true</DebugSymbols>
     <Optimize>true</Optimize>
     <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;USE_GL_CORE; USE_GLFW3;</DefineConstants>
+    <DefineConstants>USE_GL_CORE; USE_GLFW3;</DefineConstants>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DebugType>full</DebugType>
