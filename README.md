@@ -2,7 +2,7 @@ Pencil.Gaming
 =============
 Pencil.Gaming is a gaming library for C#, providing support for OpenGL, GLFW, OpenAL and Lua. It's a stable, cross-platform, open-source (some prefer the term "free") alternative to libraries like XNA, which has pretty much died now, OpenTK, which hasn't been updated for about a year, and SharpDX, which is not cross-platform. A feature that Pencil.Gaming has over most other C# gaming libraries, is that users **do not need to install any redistributables besides Mono/.NET!** 
 
-This for is used in our 3D framework FreezingArcher which can be found here (https://github.com/fin-ger/FreezingArcher)
+This fork is used in our 3D framework FreezingArcher which can be found here (https://github.com/fin-ger/FreezingArcher)
 
 We removed the olkd and deprecated GLFW2 and the backward compatible GLFW3 build targets, introduced some patches to the OpenAL binding, added a newer OpenAL32.dll for Windows, patched some of the Window functions and many more.
 
