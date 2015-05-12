@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{DDB6DB6D-E5DE-4BDB-8AC8-26DF800E9FF0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Pencil.Gaming</RootNamespace>
@@ -13,7 +11,7 @@
     <SynchReleaseVersion>False</SynchReleaseVersion>
     <Description>A minimalistic gaming library for C# based on OpenTK.</Description>
     <AssemblyName>Pencil.Gaming</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
