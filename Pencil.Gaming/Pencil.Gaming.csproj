@@ -22,8 +22,8 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <CustomCommands>
       <CustomCommands>
-        <Command type="Clean" command="rm -rf ${TargetDir}/lib32 ${TargetDir}/lib64 ${TargetDir}/../lib32 ${TargetDir}/../lib64 ${TargetDir}" workingdir="${TargetDir}" />
-        <Command type="AfterBuild" command="bash -c &quot;mkdir -p lib32 lib64 &amp;&amp; mv ${TargetDir}/lib32/* lib32 &amp;&amp; mv ${TargetDir}/lib64/* lib64 &amp;&amp; rm -r ${TargetDir}/lib32 ${TargetDir}/lib64&quot;" workingdir="${TargetDir}/.." />
+        <Command type="Clean" command="bash -c &quot;rm -rf ${TargetDir}/Pencil* ${TargetDir}/NVorbis.dll&quot;" workingdir="" />
+        <Command type="AfterBuild" command="bash -c &quot;mkdir -p ${TargetDir}/../lib32 ${TargetDir}/../lib64 &amp;&amp; mv ${TargetDir}/lib32/* ${TargetDir}/../lib32 &amp;&amp; mv ${TargetDir}/lib64/* ${TargetDir}/../lib64 &amp;&amp; rm -r ${TargetDir}/lib32 ${TargetDir}/lib64&quot;" workingdir="" />
       </CustomCommands>
     </CustomCommands>
   </PropertyGroup>
@@ -44,8 +44,8 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <CustomCommands>
       <CustomCommands>
-        <Command type="AfterBuild" command="bash -c &quot;mkdir -p lib32 lib64 &amp;&amp; mv ${TargetDir}/lib32/* lib32 &amp;&amp; mv ${TargetDir}/lib64/* lib64 &amp;&amp; rm -r ${TargetDir}/lib32 ${TargetDir}/lib64&quot;" workingdir="${TargetDir}/.." />
-        <Command type="Clean" command="bash -c &quot;rm -rf ${TargetDir}/Pencil* ${TargetDir}/NVorbis.dll&quot;" workingdir="${TargetDir}" />
+        <Command type="AfterBuild" command="bash -c &quot;mkdir -p ${TargetDir}/../lib32 ${TargetDir}/../lib64 &amp;&amp; mv ${TargetDir}/lib32/* ${TargetDir}/../lib32 &amp;&amp; mv ${TargetDir}/lib64/* ${TargetDir}/../lib64 &amp;&amp; rm -r ${TargetDir}/lib32 ${TargetDir}/lib64&quot;" workingdir="" />
+        <Command type="Clean" command="bash -c &quot;rm -rf ${TargetDir}/Pencil* ${TargetDir}/NVorbis.dll&quot;" workingdir="" />
       </CustomCommands>
     </CustomCommands>
   </PropertyGroup>
