@@ -16,15 +16,21 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\Build\Debug\lib</OutputPath>
+    <OutputPath>..\..\Build\Release\lib</OutputPath>
     <DefineConstants>USE_GL_CORE; USE_GLFW3;</DefineConstants>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="Clean" command="rm -rf ${TargetDir}/lib32 ${TargetDir}/lib64 ${TargetDir}/../lib32 ${TargetDir}/../lib64 ${TargetDir}" workingdir="${TargetDir}" />
+        <Command type="AfterBuild" command="bash -c &quot;mkdir -p lib32 lib64 &amp;&amp; mv ${TargetDir}/lib32/* lib32 &amp;&amp; mv ${TargetDir}/lib64/* lib64 &amp;&amp; rm -r ${TargetDir}/lib32 ${TargetDir}/lib64&quot;" workingdir="${TargetDir}/.." />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseWindows|x86' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\Build\Debug\lib</OutputPath>
+    <OutputPath>..\..\Build\Release\lib</OutputPath>
     <DefineConstants>USE_GL_CORE; USE_GLFW3;</DefineConstants>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -38,8 +44,8 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <CustomCommands>
       <CustomCommands>
-        <Command type="AfterBuild" command="mv ${TargetDir}/lib32 ${TargetDir}/.. &amp;&amp; mv ${TargetDir}/lib64 ${TargetDir}/.." workingdir="${TargetDir}" />
-        <Command type="Clean" command="rm -rf ${TargetDir}/lib32 ${TargetDir}/lib64 ${TargetDir}/../lib32 ${TargetDir}/..lib64 ${TargetDir}/NVorbis.dll" workingdir="${TargetDir}" />
+        <Command type="AfterBuild" command="bash -c &quot;mkdir -p lib32 lib64 &amp;&amp; mv ${TargetDir}/lib32/* lib32 &amp;&amp; mv ${TargetDir}/lib64/* lib64 &amp;&amp; rm -r ${TargetDir}/lib32 ${TargetDir}/lib64&quot;" workingdir="${TargetDir}/.." />
+        <Command type="Clean" command="rm -rf ${TargetDir}/lib32 ${TargetDir}/lib64 ${TargetDir}/../lib32 ${TargetDir}/../lib64 ${TargetDir}" workingdir="${TargetDir}" />
       </CustomCommands>
     </CustomCommands>
   </PropertyGroup>
